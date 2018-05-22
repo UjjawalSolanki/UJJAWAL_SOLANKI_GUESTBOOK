@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {JwtModule} from '@auth0/angular-jwt';
+import {HttpClientModule} from "@angular/common/http";
 
 
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ export function tokenGetter() {
     BrowserModule,
     RoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     FormsModule,
     JwtModule.forRoot({
       config: {
