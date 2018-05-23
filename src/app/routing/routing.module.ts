@@ -8,10 +8,10 @@ import {AuthService} from '../service/auth.service';
 import {VisitorProfileComponent} from '../visitor-profile/visitor-profile.component';
 
 const routes: Routes = [
-  {path: '', redirectTo : '/dashboard', pathMatch : 'full'},
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuardService]},
   {path: 'login', component: LoginComponent},
-  {path : 'visitorprofile/:id', component: VisitorProfileComponent },
+  {path : 'visitorprofile/:id', component: VisitorProfileComponent, canActivate: [AuthGuardService]},
+  {path: '**', redirectTo : '/dashboard'}
 ];
 
 @NgModule({
