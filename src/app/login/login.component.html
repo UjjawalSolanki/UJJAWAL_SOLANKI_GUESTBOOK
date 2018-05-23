@@ -14,7 +14,7 @@
           <input matInput type="password" required placeholder="password" formControlName="passwordLogin">
         </mat-form-field>
       </form>
-      <button mat-raised-button [disabled]="!(userLoginForm.controls.emailLogin.valid && userLoginForm.controls.passwordLogin.valid)"  (click)="login()"  color="accent" type="submit">Login</button>
+      <button mat-raised-button [disabled]="!(userLoginForm.valid)"  (click)="login()"  color="accent" type="submit">Login</button>
       <mat-progress-spinner color="primary" mode="indeterminate" *ngIf="processLogin" diameter="30"></mat-progress-spinner>
     </mat-card-content>
   </mat-card>
@@ -36,7 +36,7 @@
           <input matInput placeholder="password" required type="password" formControlName="passwordSignup">
         </mat-form-field>
       </form>
-      <button mat-raised-button [disabled]="!(userSignupForm.controls.nameSignup.valid && userSignupForm.controls.emailSignup.valid && userSignupForm.controls.passwordSignup.valid)" (click)="signUp()" color="accent" type="submit">Signup</button>
+      <button mat-raised-button [disabled]="!(userSignupForm.valid)" (click)="signUp()" color="accent" type="submit">Signup</button>
       <mat-progress-spinner color="primary" mode="indeterminate" *ngIf="processSignup" diameter="30"></mat-progress-spinner>
     </mat-card-content>
   </mat-card>
