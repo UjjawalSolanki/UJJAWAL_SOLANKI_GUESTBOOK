@@ -18,14 +18,41 @@
     </mat-card-title>
     <mat-divider></mat-divider>
     <mat-card-content *ngIf="visitorListAvailable && visitorsList.length">
-      <mat-list fxFlex="100%">
+      <!--<mat-list fxFlex="100%">
         <mat-list-item *ngFor="let visitor of visitorsList">
           <img mat-list-avatar src="../../assets/imgs/avatar.png" style="cursor: pointer" (click)="openProfile(visitor.id)">
           <h3 mat-line><strong  style="cursor: pointer" (click)="openProfile(visitor.id)">{{visitor.name}}</strong></h3>
           <button mat-icon-button (click)="updateVisitorDialog(visitor)"><i class="material-icons">mode_edit</i></button>
           <button mat-icon-button (click)="openDeleteDialog(visitor)"><i class="material-icons">delete</i></button>
         </mat-list-item>
-      </mat-list>
+      </mat-list>-->
+      <table>
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>In Time</th>
+          <th>Out Time</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let visitor of visitorsList">
+          <td>
+            <mat-list fxFlex="100%">
+              <mat-list-item>
+                <img mat-list-avatar src="../../assets/imgs/avatar.png" style="cursor: pointer" (click)="openProfile(visitor.id)">
+                <h3><strong  style="cursor: pointer" (click)="openProfile(visitor.id)">{{visitor.name}}</strong></h3>
+              </mat-list-item>
+            </mat-list>
+          </td>
+          <td>{{visitor.in_time || '-'}}</td>
+          <td>{{visitor.out_time || '-' }} </td>
+          <td>
+            <button mat-icon-button (click)="updateVisitorDialog(visitor)"><i class="material-icons">mode_edit</i></button>
+            <button mat-icon-button (click)="openDeleteDialog(visitor)"><i class="material-icons">delete</i></button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
     </mat-card-content>
     <mat-card-content  *ngIf="visitorListAvailable && !visitorsList.length">
       <mat-list fxFlexAlign="center" fxFlex="50%" fxFlexOffset="45%">
@@ -34,6 +61,8 @@
         </mat-list-item>
       </mat-list>
     </mat-card-content>
-    <mat-spinner color="accent" mode="indeterminate" *ngIf="!visitorListAvailable"></mat-spinner>
   </mat-card>
+</div>
+<div fxLayout="row" fxFlex="100%">
+  <mat-spinner color="accent" mode="indeterminate" *ngIf="!visitorListAvailable"></mat-spinner>
 </div>

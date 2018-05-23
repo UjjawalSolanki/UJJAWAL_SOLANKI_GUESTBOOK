@@ -31,3 +31,39 @@ body {
   top: 40%;
   position : relative !important;
 }
+
+table {
+  border: 0px;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+thead tr th{
+  font-size:14px;
+  font-weight:600;
+  font-family:lato,sans-serif;
+  text-align:left;
+  padding:10px 5px;
+  text-transform:uppercase;
+  color:#444;
+  text-align:center;
+}
+
+thead tr th:first-child, tbody tr td:first-child{
+  text-align: left;
+}
+
+tbody tr {
+  border-top: 1px solid #f0f0f0;
+}
+
+td {
+  font-size:14px;
+  font-weight:400;
+  padding:10px 5px;
+  font-family:lato,sans-serif;
+  text-align:center;
+  color:#444;
+}

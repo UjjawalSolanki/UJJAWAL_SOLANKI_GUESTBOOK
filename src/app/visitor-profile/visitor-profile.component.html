@@ -32,5 +32,8 @@
     </div>
   </mat-card-content>
 </mat-card>
+<div fxLayout="row" fxFlex="100%">
+  <mat-spinner color="accent" mode="indeterminate" *ngIf="!visitorProfileAvailable"></mat-spinner>
+</div>
 
-<mat-spinner color="accent" mode="indeterminate" *ngIf="!visitorProfileAvailable"></mat-spinner>
+
