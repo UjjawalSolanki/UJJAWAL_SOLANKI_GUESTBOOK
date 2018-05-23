@@ -16,6 +16,10 @@ export class TudipApiService {
     return this.http.post(this.tudipApiBaseUrl + '/api/auth/register', body);
   }
 
+  getVisitor(id) {
+    return this.http.get(this.tudipApiBaseUrl + '/api/visitors/'+ id);
+  }
+
   getVisitors() {
     return this.http.get(this.tudipApiBaseUrl + '/api/visitors');
   }

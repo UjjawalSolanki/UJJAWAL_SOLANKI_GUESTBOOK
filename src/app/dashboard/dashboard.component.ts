@@ -83,6 +83,10 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  openProfile(id) {
+    this.router.navigate(['/visitorprofile/', id]);
+  }
+
   logout() {
     localStorage.clear();
     this.router.navigate(['/login']);

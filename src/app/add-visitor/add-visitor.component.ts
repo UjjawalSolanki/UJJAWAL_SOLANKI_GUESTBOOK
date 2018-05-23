@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { MatDialogRef} from '@angular/material';
 import {DashboardComponent} from '../dashboard/dashboard.component';
 import {TudipApiService} from '../service/tudip-api.service';
-import {WidgetUtilService} from "../service/widget-util.service";
+import {WidgetUtilService} from '../service/widget-util.service';
 
 @Component({
   selector: 'app-add-visitor',

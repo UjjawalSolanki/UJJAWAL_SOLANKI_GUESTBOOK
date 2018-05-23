@@ -20,8 +20,8 @@
     <mat-card-content *ngIf="visitorListAvailable && visitorsList.length">
       <mat-list fxFlex="100%">
         <mat-list-item *ngFor="let visitor of visitorsList">
-          <img mat-list-avatar src="../../assets/imgs/avatar.png"style="cursor: pointer">
-          <h3 mat-line><strong  style="cursor: pointer">{{visitor.name}}</strong></h3>
+          <img mat-list-avatar src="../../assets/imgs/avatar.png" style="cursor: pointer" (click)="openProfile(visitor.id)">
+          <h3 mat-line><strong  style="cursor: pointer" (click)="openProfile(visitor.id)">{{visitor.name}}</strong></h3>
           <button mat-icon-button (click)="updateVisitorDialog(visitor)"><i class="material-icons">mode_edit</i></button>
           <button mat-icon-button (click)="openDeleteDialog(visitor)"><i class="material-icons">delete</i></button>
         </mat-list-item>
