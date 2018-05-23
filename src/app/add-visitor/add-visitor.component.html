@@ -1,0 +1,28 @@
+<h1><strong>Add Visitor</strong></h1>
+<mat-dialog-content>
+  <mat-form-field>
+    <input matInput placeholder="name" required [(ngModel)]="addVisitorData.name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="email" required [(ngModel)]="addVisitorData.email">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="phone" required [(ngModel)]="addVisitorData.phone_no">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput required [matDatepicker]="intime" placeholder="in time" [(ngModel)]="addVisitorData.in_time">
+    <mat-datepicker-toggle matSuffix [for]="intime"></mat-datepicker-toggle>
+    <mat-datepicker #intime></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput required [matDatepicker]="outtime" placeholder="out time" [(ngModel)]="addVisitorData.out_time">
+    <mat-datepicker-toggle matSuffix [for]="outtime"></mat-datepicker-toggle>
+    <mat-datepicker #outtime></mat-datepicker>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="accent" (click)="addVisitor()">Add</button>
+  <button mat-button color="accent" [mat-dialog-close]="false">Cancel</button>
+  <mat-progress-spinner color="primary" mode="indeterminate" *ngIf="!visitorAdded" diameter="50"></mat-progress-spinner>
+</mat-dialog-actions>
+

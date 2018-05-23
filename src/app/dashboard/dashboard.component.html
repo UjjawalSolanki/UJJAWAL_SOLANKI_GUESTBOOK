@@ -1,3 +1,39 @@
-<p>
-  dashboard works!
-</p>
+<div fxLayout="row" fxFlex="100%" fxLayoutAlign="end">
+  <h2 matTooltip="Logout">
+    <button mat-raised-button color="light" (click)="logout()">
+      <i class="material-icons">power_settings_new</i>
+      Logout
+    </button>
+  </h2>
+</div>
+<div fxLayout="row">
+  <mat-card fxFlex="100%">
+    <mat-card-title>
+      <mat-list fxFlex="100%" style="cursor: pointer">
+        <mat-list-item>
+          <h1 mat-line style="font-size: 25px!important;">Visitors List</h1>
+          <button mat-button color="accent" (click)="addVisitor()"><i class="material-icons">add_circle_outline</i> Add Visitor</button>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content *ngIf="visitorListAvailable && visitorsList.length">
+      <mat-list fxFlex="100%">
+        <mat-list-item *ngFor="let visitor of visitorsList">
+          <img mat-list-avatar src="../../assets/imgs/avatar.png"style="cursor: pointer">
+          <h3 mat-line><strong  style="cursor: pointer">{{visitor.name}}</strong></h3>
+          <button mat-icon-button (click)="updateVisitorDialog(visitor)"><i class="material-icons">mode_edit</i></button>
+          <button mat-icon-button (click)="openDeleteDialog(visitor)"><i class="material-icons">delete</i></button>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-content  *ngIf="visitorListAvailable && !visitorsList.length">
+      <mat-list fxFlexAlign="center" fxFlex="50%" fxFlexOffset="45%">
+        <mat-list-item>
+          <h3 mat-line><strong>No visitors present</strong></h3>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-spinner color="accent" mode="indeterminate" *ngIf="!visitorListAvailable"></mat-spinner>
+  </mat-card>
+</div>

@@ -1,1 +1,11 @@
-<router-outlet></router-outlet>
+<mat-toolbar color="primary" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayout.md="column">
+  <span>
+    <button mat-button [routerLink]="['/dashboard']">
+      <strong>Receptionist APP</strong>
+    </button>
+  </span>
+</mat-toolbar>
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>
+

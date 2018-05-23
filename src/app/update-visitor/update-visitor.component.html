@@ -1,0 +1,27 @@
+<h1><strong>{{data.name}}</strong></h1>
+<mat-dialog-content>
+  <mat-form-field>
+    <input matInput placeholder="name" [(ngModel)]="data.name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="email" [(ngModel)]="data.email">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="phone" [(ngModel)]="data.phone_no">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [matDatepicker]="intime" placeholder="in time" [(ngModel)]="data.in_time">
+    <mat-datepicker-toggle matSuffix [for]="intime"></mat-datepicker-toggle>
+    <mat-datepicker #intime></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [matDatepicker]="outtime" placeholder="out time" [(ngModel)]="data.out_time">
+    <mat-datepicker-toggle matSuffix [for]="outtime"></mat-datepicker-toggle>
+    <mat-datepicker #outtime></mat-datepicker>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="accent" (click)="updateVisitor()">Update</button>
+  <button mat-button color="accent" [mat-dialog-close]="false">No</button>
+  <mat-progress-spinner color="primary" mode="indeterminate" *ngIf="!updated" diameter="50"></mat-progress-spinner>
+</mat-dialog-actions>
