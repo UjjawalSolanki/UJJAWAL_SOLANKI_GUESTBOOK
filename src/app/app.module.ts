@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {JwtModule} from '@auth0/angular-jwt';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {OwlDateTimeModule, OwlNativeDateTimeModule} from 'ng-pick-datetime';
 
 
 import { AppComponent } from './app.component';
@@ -48,7 +49,9 @@ export function tokenGetter() {
       }
     }),
     FlexLayoutModule,
-    MaterialcomponentsModule
+    MaterialcomponentsModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule
   ],
   providers: [
     TudipApiService,

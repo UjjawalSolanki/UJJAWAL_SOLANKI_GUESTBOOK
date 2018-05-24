@@ -1,25 +1,37 @@
 <h1><strong>Add Visitor</strong></h1>
 <mat-dialog-content>
   <form [formGroup]="addVisitorForm">
-    <mat-form-field>
-      <input matInput placeholder="name" required formControlName="visitorName">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="email" formControlName="visitorEmail">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="phone"  formControlName="visitorPhone">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput required [matDatepicker]="intime" placeholder="in time" formControlName="visitorInTime">
-      <mat-datepicker-toggle matSuffix [for]="intime"></mat-datepicker-toggle>
-      <mat-datepicker #intime></mat-datepicker>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput [matDatepicker]="outtime" placeholder="out time" formControlName="visitorOutTime">
-      <mat-datepicker-toggle matSuffix [for]="outtime"></mat-datepicker-toggle>
-      <mat-datepicker #outtime></mat-datepicker>
-    </mat-form-field>
+    <div fxFlex="100%" fxLayout="row">
+      <mat-form-field>
+        <input matInput placeholder="name" required formControlName="visitorName">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="email" formControlName="visitorEmail">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="phone"  formControlName="visitorPhone">
+      </mat-form-field>
+    </div>
+    <!--<mat-form-field>-->
+      <!--<input matInput required [matDatepicker]="intime" placeholder="in time" formControlName="visitorInTime">-->
+      <!--<mat-datepicker-toggle matSuffix [for]="intime"></mat-datepicker-toggle>-->
+      <!--<mat-datepicker #intime></mat-datepicker>-->
+    <!--</mat-form-field>-->
+    <!--<mat-form-field>-->
+      <!--<input matInput [matDatepicker]="outtime" placeholder="out time" formControlName="visitorOutTime">-->
+      <!--<mat-datepicker-toggle matSuffix [for]="outtime"></mat-datepicker-toggle>-->
+      <!--<mat-datepicker #outtime></mat-datepicker>-->
+    <!--</mat-form-field>-->
+    <div fxFlex="100%" fxLayout="row" style="margin-top: 10px!important;">
+      <span>In Time*</span>
+      <input [owlDateTime]="intime" [owlDateTimeTrigger]="intime" required placeholder="in time" formControlName="visitorInTime">
+      <owl-date-time #intime></owl-date-time>
+    </div>
+    <div fxFlex="100%" fxLayout="row" style="margin-top: 10px!important;">
+      <span>Out Time</span>
+      <input [owlDateTime]="outime" [owlDateTimeTrigger]="outime" placeholder="out time" formControlName="visitorOutTime">
+      <owl-date-time #outime></owl-date-time>
+    </div>
   </form>
 </mat-dialog-content>
 <mat-dialog-actions>

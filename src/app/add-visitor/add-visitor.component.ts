@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import { MatDialogRef} from '@angular/material';
 import {DashboardComponent} from '../dashboard/dashboard.component';
 import {TudipApiService} from '../service/tudip-api.service';
@@ -8,7 +8,8 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 @Component({
   selector: 'app-add-visitor',
   templateUrl: './add-visitor.component.html',
-  styleUrls: ['./add-visitor.component.scss']
+  styleUrls: ['./add-visitor.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AddVisitorComponent implements OnInit {
 
