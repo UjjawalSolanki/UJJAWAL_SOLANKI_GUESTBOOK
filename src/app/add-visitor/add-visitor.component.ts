@@ -1,15 +1,14 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { MatDialogRef} from '@angular/material';
 import {DashboardComponent} from '../dashboard/dashboard.component';
 import {TudipApiService} from '../service/tudip-api.service';
 import {WidgetUtilService} from '../service/widget-util.service';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-add-visitor',
   templateUrl: './add-visitor.component.html',
-  styleUrls: ['./add-visitor.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./add-visitor.component.scss']
 })
 export class AddVisitorComponent implements OnInit {
 
@@ -21,6 +20,7 @@ export class AddVisitorComponent implements OnInit {
   visitorPhone: FormControl;
   visitorInTime: FormControl;
   visitorOutTime: FormControl;
+
 
   constructor(public dialogRef: MatDialogRef<DashboardComponent>, private tudipApiSerivce: TudipApiService
   , private widgetUtil: WidgetUtilService) {
@@ -75,9 +75,10 @@ export class AddVisitorComponent implements OnInit {
       this.dialogRef.close(visitorObj);
       this.visitorAdded = true;
     }, (error) => {
-      this.visitorAdded = false;
+      this.visitorAdded = true;
       this.widgetUtil.openSnackBar(error.error.message, 'Ok');
     });
   }
+
 
 }

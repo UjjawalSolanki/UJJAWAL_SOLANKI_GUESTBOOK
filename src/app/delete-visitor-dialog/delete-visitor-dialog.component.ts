@@ -2,6 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {DashboardComponent} from '../dashboard/dashboard.component';
 import {TudipApiService} from '../service/tudip-api.service';
+import {WidgetUtilService} from '../service/widget-util.service';
 
 @Component({
   selector: 'app-delete-visitor-dialog',
@@ -13,8 +14,7 @@ export class DeleteVisitorDialogComponent implements OnInit {
   deleted = true;
 
   constructor(public dialogRef: MatDialogRef<DashboardComponent>, @Inject(MAT_DIALOG_DATA) public data: any
-  , private tudipApiSerivce: TudipApiService) {
-    console.log(this.data);
+  , private tudipApiSerivce: TudipApiService, public widget: WidgetUtilService ) {
   }
 
   ngOnInit() {
@@ -27,7 +27,7 @@ export class DeleteVisitorDialogComponent implements OnInit {
       this.deleted = true;
     }, (error) => {
       this.dialogRef.close(false);
-      console.log(error.error.message);
+      this.widget.openSnackBar(error.error.message, 'Ok');
     });
   }
 

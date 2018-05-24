@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
       this.visitorListAvailable = true;
     }, (error) => {
       this.visitorListAvailable = true;
-      console.log(error);
+      this.widget.openSnackBar(error.error.message, 'Ok');
     });
   }
 
@@ -41,12 +41,11 @@ export class DashboardComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
       if (result) {
         this.visitorsList = [];
         this.visitorListAvailable = false;
         this.getVisitorList();
-        this.widget.openSnackBar(`${result.name} remove successfully!`, 'Ok');
+        this.widget.openSnackBar(`${result.name} removed successfully!`, 'Ok');
       }
     });
   }
@@ -58,7 +57,6 @@ export class DashboardComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
       if (result) {
         this.visitorsList = [];
         this.visitorListAvailable = false;
@@ -73,7 +71,6 @@ export class DashboardComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
       if (result) {
         this.visitorsList = [];
         this.visitorListAvailable = false;

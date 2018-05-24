@@ -31,13 +31,18 @@ export class UpdateVisitorComponent implements OnInit {
 
   createFormControls() {
     this.visitorName = new FormControl(this.data.name, [
+      Validators.required
     ]);
     this.visitorEmail = new FormControl(this.data.email, [Validators.pattern('[^ @]*@[^ @]*')]);
     this.visitorPhone = new FormControl(this.data.phone_no);
     if (this.data.in_time) {
-      this.visitorInTime = new FormControl(new Date(parseInt(this.data.in_time)));
+      this.visitorInTime = new FormControl(new Date(parseInt(this.data.in_time)), [
+        Validators.required
+      ]);
     } else {
-      this.visitorInTime = new FormControl('');
+      this.visitorInTime = new FormControl('',[
+        Validators.required
+      ]);
     }
     if (this.data.out_time) {
       this.visitorOutTime = new FormControl(new Date(parseInt(this.data.out_time)));

@@ -44,8 +44,8 @@
               </mat-list-item>
             </mat-list>
           </td>
-          <td>{{visitor.in_time || '-'}}</td>
-          <td>{{visitor.out_time || '-' }} </td>
+          <td>{{visitor.in_time || 'Nil'}}</td>
+          <td>{{visitor.out_time || 'Nil' }} </td>
           <td>
             <button mat-icon-button (click)="updateVisitorDialog(visitor)"><i class="material-icons">mode_edit</i></button>
             <button mat-icon-button (click)="openDeleteDialog(visitor)"><i class="material-icons">delete</i></button>

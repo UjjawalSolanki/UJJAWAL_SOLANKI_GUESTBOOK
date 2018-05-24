@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {TudipApiService} from '../service/tudip-api.service';
+import {WidgetUtilService} from '../service/widget-util.service';
 
 @Component({
   selector: 'app-visitor-profile',
@@ -13,7 +14,7 @@ export class VisitorProfileComponent implements OnInit {
   visitorProfile: Object = {};
   visitorProfileAvailable = true;
 
-  constructor(private route: ActivatedRoute, private tudipApi: TudipApiService ) {
+  constructor(private route: ActivatedRoute, private tudipApi: TudipApiService, public widget: WidgetUtilService ) {
     this.route.params.subscribe((params: any) => {
       this.visitorId = params['id'];
       this.getVisitor();
@@ -30,7 +31,7 @@ export class VisitorProfileComponent implements OnInit {
       this.visitorProfileAvailable = true;
     }, (error) => {
       this.visitorProfileAvailable = true;
-      console.log(error);
+      this.widget.openSnackBar(error.error.message, 'Ok');
     });
 
   }

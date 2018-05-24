@@ -3,7 +3,7 @@
   <form [formGroup]="updateVisitorForm">
     <div fxFlex="100%" fxLayout="row">
       <mat-form-field>
-        <input matInput placeholder="name" formControlName="visitorName">
+        <input matInput placeholder="name" required formControlName="visitorName">
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="email" formControlName="visitorEmail">
@@ -13,7 +13,7 @@
       </mat-form-field>
     </div>
     <div fxFlex="100%" fxLayout="row"  style="margin-top: 20px!important;">
-      <label>In Time </label>
+      <label>In Time* </label>
       <input [owlDateTime]="intime" class="datetimepicker" [owlDateTimeTrigger]="intime" required placeholder="in time" formControlName="visitorInTime">
       <owl-date-time #intime></owl-date-time>
     </div>
