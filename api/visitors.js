@@ -68,8 +68,11 @@ router.post('/store', function (req, res, next) {
     if (error) {
       res.status(500);
       res.send('Something went wrong');
-    } else {
-      res.send({message: "Visitor Added Successfully", status_code: 204});
+    }else if (body != undefined) {
+      res.status(body.status_code);
+      res.send(body);
+    }else {
+      res.send({message: "Visitor Added Successfully", status_code: 201});
     }
   });
 });
@@ -90,7 +93,10 @@ router.post('/:id', function (req, res, next) {
     if (error) {
       res.status(500);
       res.send('Something went wrong');
-    } else {
+    }else if (body != undefined) {
+      res.status(body.status_code);
+      res.send(body);
+    }else {
       res.send({message: "Visitor Updated Successfully", status_code: 204});
     }
   });
@@ -111,6 +117,9 @@ router.delete('/:id', function (req, res, next) {
     if (error) {
       res.status(500);
       res.send('Something went wrong');
+    }else if (body != undefined) {
+      res.status(body.status_code);
+      res.send(body);
     }else {
       res.send({message: "Visitor Removed Successfully", status_code: 204});
     }

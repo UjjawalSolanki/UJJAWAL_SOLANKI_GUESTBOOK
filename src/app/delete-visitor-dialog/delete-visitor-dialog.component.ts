@@ -26,7 +26,6 @@ export class DeleteVisitorDialogComponent implements OnInit {
       this.dialogRef.close(this.data);
       this.deleted = true;
     }, (error) => {
-      this.dialogRef.close(false);
       this.widget.openSnackBar(error.error.message, 'Ok');
     });
   }

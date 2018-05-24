@@ -78,7 +78,6 @@ export class UpdateVisitorComponent implements OnInit {
       this.dialogRef.close(this.data);
       this.updated = true;
     }, (error) => {
-      this.dialogRef.close(false);
       this.widgetUtil.openSnackBar(error.error.message, 'Ok');
     });
   }
