@@ -12,14 +12,14 @@
         <input matInput placeholder="phone" formControlName="visitorPhone">
       </mat-form-field>
     </div>
-    <div fxFlex="100%" fxLayout="row" style="margin-top: 10px!important;">
-      <span>In Time</span>
-      <input [owlDateTime]="intime" [owlDateTimeTrigger]="intime" required placeholder="in time" formControlName="visitorInTime">
+    <div fxFlex="100%" fxLayout="row"  style="margin-top: 20px!important;">
+      <label>In Time </label>
+      <input [owlDateTime]="intime" class="datetimepicker" [owlDateTimeTrigger]="intime" required placeholder="in time" formControlName="visitorInTime">
       <owl-date-time #intime></owl-date-time>
     </div>
-    <div fxFlex="100%" fxLayout="row" style="margin-top: 10px!important;">
-      <span>Out Time</span>
-      <input [owlDateTime]="outime" [owlDateTimeTrigger]="outime" placeholder="out time" formControlName="visitorOutTime">
+    <div fxFlex="100%" fxLayout="row"  style="margin-top: 20px!important;">
+      <label>Out Time </label>
+      <input [owlDateTime]="outime" class="datetimepicker" [owlDateTimeTrigger]="outime" placeholder="out time" formControlName="visitorOutTime">
       <owl-date-time #outime></owl-date-time>
     </div>
     <!--<mat-form-field>
