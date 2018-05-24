@@ -3,11 +3,72 @@
 @import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import url('https://fonts.googleapis.com/css?family=Droid+Sans:400,700');
+@import "~ng-pick-datetime/assets/style/picker.min.css";
 
 $full-background : #f7f7f7;
 
 body {
   margin: 0px!important;
-  font-family: Roboto;
+  font-family: Roboto !important;
   background-color: $full-background;
+}
+
+.mat-toolbar {
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+.main-content {
+  min-height: 100%;
+  margin: 50px !important;
+}
+
+.page-loader {
+  margin-top: 40%;
+  margin-left: 45%;
+  position : relative !important;
+}
+
+.mat-spinner {
+  left: 40%;
+  top: 40%;
+  position : relative !important;
+}
+
+table {
+  border: 0px;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+thead tr th{
+  font-size:14px;
+  font-weight:600;
+  font-family:lato,sans-serif;
+  text-align:left;
+  padding:10px 5px;
+  text-transform:uppercase;
+  color:#444;
+  text-align:center;
+}
+
+thead tr th:first-child, tbody tr td:first-child{
+  text-align: left;
+}
+
+tbody tr {
+  border-top: 1px solid #f0f0f0;
+}
+
+td {
+  font-size:14px;
+  font-weight:400;
+  padding:10px 5px;
+  font-family:lato,sans-serif;
+  text-align:center;
+  color:#444;
+}
+
+.datetimepicker {
+  margin-left: 10px!important;
 }

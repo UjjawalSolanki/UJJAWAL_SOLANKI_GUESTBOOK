@@ -1,0 +1,39 @@
+<mat-card>
+  <mat-card-content *ngIf="visitorProfileAvailable">
+    <div fxFlex="100%" class="profile" >
+      <img src="../../assets/imgs/avatar.png" height="160px">
+      <h3 style="margin: 2px;">{{visitorProfile.name}}</h3>
+      <p style="margin: 0px;">
+        <strong>{{visitorProfile.email}}</strong>
+      </p>
+    </div>
+    <mat-divider></mat-divider>
+    <div>
+      <table>
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>In Time</th>
+          <th>Out Time</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>{{visitorProfile.name}}</td>
+          <td>{{visitorProfile.email || 'Nil'}}</td>
+          <td>{{visitorProfile.phone_no || 'Nil'}}</td>
+          <td>{{visitorProfile.in_time || 'Nil'}}</td>
+          <td>{{visitorProfile.out_time || 'Nil' }} </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </mat-card-content>
+</mat-card>
+<div fxLayout="row" fxFlex="100%">
+  <mat-spinner color="accent" mode="indeterminate" *ngIf="!visitorProfileAvailable"></mat-spinner>
+</div>
+
+

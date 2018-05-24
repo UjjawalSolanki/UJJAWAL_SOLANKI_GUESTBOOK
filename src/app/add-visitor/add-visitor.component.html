@@ -1,0 +1,42 @@
+<h1><strong>Add Visitor</strong></h1>
+<mat-dialog-content>
+  <form [formGroup]="addVisitorForm">
+    <div fxFlex="100%" fxLayout="row">
+      <mat-form-field>
+        <input matInput placeholder="name" required formControlName="visitorName">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="email" formControlName="visitorEmail">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="phone"  formControlName="visitorPhone">
+      </mat-form-field>
+    </div>
+    <!--<mat-form-field>-->
+      <!--<input matInput required [matDatepicker]="intime" placeholder="in time" formControlName="visitorInTime">-->
+      <!--<mat-datepicker-toggle matSuffix [for]="intime"></mat-datepicker-toggle>-->
+      <!--<mat-datepicker #intime></mat-datepicker>-->
+    <!--</mat-form-field>-->
+    <!--<mat-form-field>-->
+      <!--<input matInput [matDatepicker]="outtime" placeholder="out time" formControlName="visitorOutTime">-->
+      <!--<mat-datepicker-toggle matSuffix [for]="outtime"></mat-datepicker-toggle>-->
+      <!--<mat-datepicker #outtime></mat-datepicker>-->
+    <!--</mat-form-field>-->
+    <div fxFlex="100%" fxLayout="row" style="margin-top: 20px!important;">
+      <label>In Time* </label>
+      <input [owlDateTime]="intime" class="datetimepicker" [owlDateTimeTrigger]="intime" required placeholder="in time" formControlName="visitorInTime">
+      <owl-date-time #intime></owl-date-time>
+    </div>
+    <div fxFlex="100%" fxLayout="row" style="margin-top: 20px!important;">
+      <label>Out Time </label>
+      <input [owlDateTime]="outime" class="datetimepicker" [owlDateTimeTrigger]="outime" placeholder="out time" formControlName="visitorOutTime">
+      <owl-date-time #outime></owl-date-time>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button [disabled]="!(addVisitorForm.valid)" color="accent" (click)="addVisitor()">Add</button>
+  <button mat-button color="accent" [mat-dialog-close]="false">Cancel</button>
+  <mat-progress-spinner color="primary" mode="indeterminate" *ngIf="!visitorAdded" diameter="50"></mat-progress-spinner>
+</mat-dialog-actions>
+

@@ -1,0 +1,8 @@
+<mat-dialog-content>
+  <span>Are you sure you want to <strong>remove {{data.name}}</strong> ?</span>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="accent" (click)="deleteVisitor()">Remove</button>
+  <button mat-button color="accent" [mat-dialog-close]="fals">No</button>
+  <mat-progress-spinner color="primary" mode="indeterminate" *ngIf="!deleted" diameter="50"></mat-progress-spinner>
+</mat-dialog-actions>
