@@ -22,7 +22,9 @@ export class LoginComponent implements OnInit {
   passwordSignup: FormControl;
 
   constructor(private tudipApi: TudipApiService, private router: Router, private widgetUtil: WidgetUtilService) {
-    localStorage.clear();
+    if (localStorage.getItem('token') != null ) {
+      this.router.navigate(['/dashboard']);
+    }
   }
 
   ngOnInit() {
