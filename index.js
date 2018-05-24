@@ -8,7 +8,12 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+process.env.baseUrl = 'http://atithi.dev.tudip.com';
+
 var port = process.env.PORT || 5007;
+
+app.use('/api/auth', require('./api/auth'));
+app.use('/api/visitors', require('./api/visitors'));
 
 app.use(express.static(path.join(__dirname, '/dist')));
 
