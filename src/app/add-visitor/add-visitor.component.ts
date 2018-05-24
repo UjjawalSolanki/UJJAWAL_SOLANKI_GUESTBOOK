@@ -14,13 +14,6 @@ export class AddVisitorComponent implements OnInit {
 
   visitorAdded = true;
 
-  addVisitorData =  {
-    name: '',
-    email: '',
-    phone_no: '',
-    in_time: '',
-    out_time: ''
-  };
   addVisitorForm: FormGroup;
   visitorName: FormControl;
   visitorEmail: FormControl;
