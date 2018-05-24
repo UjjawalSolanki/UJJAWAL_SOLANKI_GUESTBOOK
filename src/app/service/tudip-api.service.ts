@@ -4,36 +4,36 @@ import {HttpClient} from '@angular/common/http';
 @Injectable()
 export class TudipApiService {
 
-  private tudipApiBaseUrl = 'http://atithi.dev.tudip.com';
+  private baseUrl = 'https://ujjawal-solanki-guestbook.herokuapp.com';
 
   constructor(private http: HttpClient) { }
 
   login(body) {
-    return this.http.post(this.tudipApiBaseUrl + '/api/auth/login', body);
+    return this.http.post(this.baseUrl + '/api/auth/login', body);
   }
 
   signUp(body) {
-    return this.http.post(this.tudipApiBaseUrl + '/api/auth/register', body);
+    return this.http.post(this.baseUrl + '/api/auth/register', body);
   }
 
   getVisitor(id) {
-    return this.http.get(this.tudipApiBaseUrl + '/api/visitors/'+ id);
+    return this.http.get(this.baseUrl + '/api/visitors/' + id);
   }
 
   getVisitors() {
-    return this.http.get(this.tudipApiBaseUrl + '/api/visitors');
+    return this.http.get(this.baseUrl + '/api/visitors');
   }
 
   removeVisitor(id) {
-    return this.http.delete(this.tudipApiBaseUrl + '/api/visitors/' + id);
+    return this.http.delete(this.baseUrl + '/api/visitors/' + id);
   }
 
   updateVisitor(body) {
-    return this.http.post(this.tudipApiBaseUrl + '/api/visitors/' + body.id, body);
+    return this.http.post(this.baseUrl + '/api/visitors/' + body.id, body);
   }
 
   addVisitor(body) {
-    return this.http.post(this.tudipApiBaseUrl + '/api/visitors/store', body);
+    return this.http.post(this.baseUrl + '/api/visitors/store', body);
   }
 
 }
